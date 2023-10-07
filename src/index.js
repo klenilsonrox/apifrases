@@ -6,24 +6,14 @@ import connectDB from "./database/connectDatabase.js"
 
 dotenv.config()
 
-const allowedOrigins = [
-    process.env.SITE_URL_1,
-    process.env.SITE_URL_2,
-    process.env.SITE_URL_3,
-    process.env.SITE_URL_4,
 
-  ];
 
   const port = process.env.MONGO_PORT
 
   const corsOptions = {
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Acesso não permitido por CORS'));
-      }
-    },
+    origin: ['https://geradordeconselhos.netlify.app', 'https://geradordeconselhos.com.br'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Se você precisar de suporte a cookies
   };
 
   const app = express()
