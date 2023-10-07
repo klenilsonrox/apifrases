@@ -29,12 +29,13 @@ const allowedOrigins = [
   const app = express()
   app.use(express.json())
   app.use(cors(corsOptions))
-  app.use("/", (req,res)=>{
-    res.json({
-      status:"OK"
-    })
-  })
+ 
 app.use("/api",routerFrases)
+app.use("/", (req,res)=>{
+  res.json({
+    status:"OK"
+  })
+})
 
 
 
