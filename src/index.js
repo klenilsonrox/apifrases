@@ -11,7 +11,7 @@ dotenv.config()
   const port = process.env.MONGO_PORT
 
   const corsOptions = {
-    origin: ['https://geradordeconselhos.netlify.app', 'https://geradordeconselhos.com.br'],
+    origin: ['https://motiva-me.netlify.app', 'https://motiva-me.com.br'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Se você precisar de suporte a cookies
   };
